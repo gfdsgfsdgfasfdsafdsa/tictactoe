@@ -8,6 +8,7 @@ export default function Home() {
     return (
         <div class={tw`p-4 mx-auto max-w-screen-md`}>
             <h1>TicTacToe</h1>
+            <div class={tw`text-xl`}>Mylen Pangit</div>
             <Game />
         </div>
     );
