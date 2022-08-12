@@ -3,7 +3,7 @@ import { h } from "preact";
 import { useState } from "preact/hooks";
 import { tw } from "@twind";
 
-import { Button } from "../components/Button.tsx";
+import { GridButton } from "../components/GridButton.tsx";
 import Game from "./Game.tsx";
 
 interface CounterProps {
@@ -16,8 +16,8 @@ export default function Counter(props: CounterProps) {
         <div class={tw`flex gap-2 w-full`}>
             <Game/>
             <p class={tw`flex-grow-1 font-bold text-xl`}>{count}</p>
-            <Button onClick={() => setCount(count - 1)}>-1</Button>
-            <Button onClick={() => setCount(count + 1)}>+1</Button>
+            <GridButton onClick={() => setCount(count - 1)}>-1</GridButton>
+            <GridButton onClick={() => setCount(count + 1)}>+1</GridButton>
         </div>
     );
 }
