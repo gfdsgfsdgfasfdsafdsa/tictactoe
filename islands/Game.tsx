@@ -154,7 +154,7 @@ export default function Game() {
     return (
         <div class={tw`px-3 w-50`}>
             <div class={tw`${state.start ? 'hidden' : ''}`}>
-                <div class={tw`text-xl mt-5`}>O will go first : </div>
+                <div class={tw`mt-5`}>O will go first : </div>
                 <div class={tw`flex flex-row items-center ml-5 mt-2`}>
                     <div class={tw`ml-3`}>
                         <Radio
@@ -178,7 +178,7 @@ export default function Game() {
                 </div>
             </div>
             {state.winner ? (
-                <div class={tw`text-left w-96 mb-3 mt-5`}>
+                <div class={tw`text-left mb-3 mt-5`}>
                     <div>{state.winner}</div>
                     <Button
                         onClick={handleRestart}
@@ -188,14 +188,14 @@ export default function Game() {
                 </div>
             ): (
                 computerTurn ? (
-                    <div class={tw`text-left w-96 mt-5`}>Fetching Computer Move..</div>
+                    <div class={tw`text-left mt-5`}>Fetching Computer Move..</div>
                 ): (
                     state.start && !state.winner ? (
-                        <div class={tw`text-left w-96 mt-5`}>Your Turn!</div>
+                        <div class={tw`text-left mt-5`}>Your Turn!</div>
                     ): ''
                 )
             )}
-            <div class={tw`flex justify-center`}>
+            <div>
                 <div class={tw`grid grid-cols-3 w-96 ${state.start ? 'opacity-1' : 'opacity-0'}`}>
                     {state.game.split('').map((s, i) => {
                         if(s == '-'){
