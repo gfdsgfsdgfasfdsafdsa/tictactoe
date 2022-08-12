@@ -6,11 +6,7 @@ import Game from "../islands/Game.tsx";
 export default function Home() {
 
     return (
-        <div class={tw`w-screen h-screen bg-black`}
-             style={{
-                 color: '#ec4899',
-             }}
-        >
+        <div class={tw`w-screen h-screen bg-black text-pink-600`}>
             <div class={tw`p-4 mx-auto max-w-screen-md font-mono`}>
                 <h1
                     class={tw`text-5xl border-b-2 pb-3 font-semibold`}

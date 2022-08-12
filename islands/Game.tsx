@@ -152,7 +152,7 @@ export default function Game() {
 
 
     return (
-        <div class={tw`px-3 w-96 m-auto`}>
+        <div class={tw`px-3 w-50`}>
             <div class={tw`${state.start ? 'hidden' : ''}`}>
                 <div class={tw`text-xl mt-5`}>O will go first : </div>
                 <div class={tw`flex flex-row items-center ml-5 mt-2`}>
