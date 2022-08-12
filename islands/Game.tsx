@@ -196,7 +196,7 @@ export default function Game() {
                 )
             )}
             <div>
-                <div class={tw`grid grid-cols-3 w-96 ${state.start ? 'opacity-1' : 'opacity-0'}`}>
+                <div class={tw`grid grid-cols-3 w-80 ${state.start ? 'opacity-1' : 'opacity-0'}`}>
                     {state.game.split('').map((s, i) => {
                         if(s == '-'){
                             return (
