@@ -41,11 +41,16 @@ export default function Game() {
     }
 
     useEffect(()=> {
-        checkWinner()
-        if(computerTurn || state.winner){
+        const winner = checkWinner()
+        if(computerTurn && !winner){
             computerMove()
+        }else if(winner){
+            setComputerTurn(false)
+            setState(prevState => ({
+                ...prevState, winner
+            }))
         }
-    }, [computerTurn, state.game])
+    }, [computerTurn])
 
     const move = (player, index) => {
         setState(prevState => {
@@ -87,11 +92,6 @@ export default function Game() {
         }
         hasWinner.push(l)
         hasWinner.push(r)
-        if(draw){
-            setState(prevState => ({
-                ...prevState, winner: 'Draw!'
-            }))
-        }
 
         let winner = ''
         if(hasWinner.includes(g.X.repeat(3))){
@@ -100,15 +100,33 @@ export default function Game() {
             winner = g.O
         }
         if(winner !== ''){
-            if(state.computer == winner)
+            if(state.computer == winner){
+                /*
                 setState(prevState => ({
                     ...prevState, winner: 'Computer Wins!'
                 }))
-            else
+                */
+                winner = 'Computer Wins!'
+            }else{
+                winner = 'You Win!'
+                /*
                 setState(prevState => ({
                     ...prevState, winner: 'You Win!'
                 }))
+                 */
+            }
         }
+        if(draw){
+            /*
+            setState(prevState => ({
+                ...prevState, winner: 'Draw!'
+            }))
+            */
+            winner = 'Draw!'
+        }
+
+        //if(check)
+        return winner
     }
 
     const computerMove = async () => {
