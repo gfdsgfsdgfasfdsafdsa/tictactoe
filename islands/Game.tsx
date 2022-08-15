@@ -54,7 +54,7 @@ export default function Game() {
 
     const move = (player, index) => {
         setState(prevState => {
-            let newGameState = prevState.game.split('').map((s, i) => {
+            const newGameState = prevState.game.split('').map((s, i) => {
                 if(i == index){
                     return player;
                 }
@@ -145,7 +145,7 @@ export default function Game() {
 
 
 
-    const handleButtonOnClick = async (index) => {
+    const handleButtonOnClick = (index) => {
         if(computerTurn || state.winner) return
         move(state.player, index)
         setComputerTurn(true)
